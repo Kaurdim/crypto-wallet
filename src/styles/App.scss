@@ -1,0 +1,11 @@
+@import './variables.scss';
+
+
+.app {
+  width: 100%;
+  min-height: 100%;
+  background-color: $main-color;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+}

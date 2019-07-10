@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+.sub-text {
+  color: $sub-text-color;
+  font-size: 11px;
+}
+
+.profit {
+  color: #0ddb86;
+}
+
+.loss {
+  color: #ff787a
+}

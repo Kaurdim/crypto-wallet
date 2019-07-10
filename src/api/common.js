@@ -1,0 +1,1 @@
+export const API_BASE_URL = 'https://min-api.cryptocompare.com/data/pricemulti';

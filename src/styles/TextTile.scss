@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+.text-tail-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  > * {
+    padding: 5px;
+  }
+}
+
+.main-text {
+  color: $text-color;
+}

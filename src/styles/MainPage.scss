@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+.main-page {
+  flex: 1;
+}
+
+.balance-display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  > * {
+    margin-bottom: 6px;
+  }
+}
+.balance {
+  color: $text-color;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.currency {
+  font-size: 16px;
+  display: inline-block;
+}
+
+.period {
+  font-size: 14px;
+  color: $sub-text-color;
+  text-align: center;
+}
+
+.daily-profit  {
+  text-align: center;
+  font-size: 14px;
+}
