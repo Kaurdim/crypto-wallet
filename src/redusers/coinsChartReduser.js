@@ -1,6 +1,25 @@
 
-const DEFAULT_PREDEFINED_INTERVALS = [
-  { format: 'DD.MM', name: 'day', text: 'Day', value: 24 },
-  { format: 'DD.MM', name: 'week', text: 'Week', value: 168 },
-  { format: 'DD.MM.YY', name: 'month', text: 'Month', value: 720 }
-];
+
+const coinChartData = {
+  selctedCoin: 'BTC',
+  chartsData: [] 
+}
+
+
+
+export function coinWalletReduser(state = coinChartData, { type, payload }) {
+  switch (type) {
+    case SELECT_COIN:
+      return {
+        ...state, 
+        selctedCoin: payload.coin
+      };
+    case SET_CHART_DATA:
+      return {
+        ...state, 
+        chartsData: payload.chartsData
+      };
+    default:
+      return state;
+  }
+}

@@ -2,21 +2,66 @@
 
 .text-tail-container {
   display: flex;
-  .tail-icon {
-
-  }
 
   .tail-text {
     display: flex;
     flex-direction: column;
     text-align: right;
     flex: 1;
-    .main-text {
+  }
+
+  .main-text {
     color: $text-color;
-    font-size: 14px;
     margin-bottom: 3px;
+    }
+
+  &.font-size-s {
+    .main-text {
+      font-size: 11px;
+    }
+    .sub-text {
+      font-size: 10px;
+    }
+  }
+  &.font-size-m {
+    .main-text {
+      font-size: 12px;
+    }
+    .sub-text {
+      font-size: 11px;
+    }
+  }
+  &.font-size-l {
+    .main-text {
+      font-size: 14px;
+    }
+    .sub-text {
+      font-size: 12px;
+    }
+  }
+  &.font-size-xl {
+    .main-text {
+      font-size: 16px;
+    }
+    .sub-text {
+      font-size: 12px;
+    }
+  }
+  &.profit {
+    .main-text {
+      color: #0ddb86;
+    }
+  }
+  &.loss {
+    .main-text {
+      color: #ff787a
     }
   }
 }
 
-
+.tail-icon {
+  color: white;
+  margin-right: 3px;
+  font-size: 20px;
+  padding: auto;
+}

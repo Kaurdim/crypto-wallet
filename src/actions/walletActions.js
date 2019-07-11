@@ -1,4 +1,4 @@
-import { getCurrentPriceData } from '../api/getCurrentPriceData';
+import { getCurrentPriceData } from '../api/common';
 import { SET_COIN_CURRENT_PRICE } from '../constants';
 
 export function getCoinsCurrentPrice(coins, currency = 'USD') {
@@ -6,8 +6,8 @@ export function getCoinsCurrentPrice(coins, currency = 'USD') {
     try {
       const prices = await getCurrentPriceData(coins, currency);
       dispatch(setCurrentPrice(prices, currency));
-    } catch (error) {
-
+    } catch (error) { 
+        console.log(error);
     }
   }
 }

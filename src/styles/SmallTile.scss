@@ -1,0 +1,31 @@
+@import './variables.scss';
+
+.small-tile {
+  margin: 8px;
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  &.active {
+    background-color:  $tail-color;
+  }
+  &.size-m {
+    width: 200px;
+    border: 1px solid $tail-color;
+
+    .main-text {
+      font-size: 12px;
+    }
+    .sub-text {
+      font-size: 11px;
+    }
+  }
+  &.size-l {
+    .main-text {
+      font-size: 16px;
+    }
+    .sub-text {
+      font-size: 14px;
+    }
+  }
+}

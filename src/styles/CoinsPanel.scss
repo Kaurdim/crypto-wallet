@@ -1,0 +1,8 @@
+.coins-panel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-y: scroll;
+  > .small-tile {
+    flex-basis: 200px;
+  }
+}

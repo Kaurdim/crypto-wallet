@@ -23,12 +23,24 @@ module.exports = {
       {
         test: /\.s?[ac]ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
-      }
+      },
+      {
+        test: /\.(png|svg|ttf|otf|woff)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
     ]
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   devServer: {
     port: PORT,
+    historyApiFallback: true
   },
   plugins: [new HtmlWebpackPlugin({
     template: './public/index.html',
