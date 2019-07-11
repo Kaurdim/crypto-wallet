@@ -2,13 +2,21 @@
 
 .text-tail-container {
   display: flex;
-  flex-direction: column;
-  text-align: left;
-  > * {
-    padding: 5px;
+  .tail-icon {
+
+  }
+
+  .tail-text {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    flex: 1;
+    .main-text {
+    color: $text-color;
+    font-size: 14px;
+    margin-bottom: 3px;
+    }
   }
 }
 
-.main-text {
-  color: $text-color;
-}
+

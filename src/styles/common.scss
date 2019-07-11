@@ -2,7 +2,7 @@
 
 .sub-text {
   color: $sub-text-color;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .profit {
@@ -11,4 +11,11 @@
 
 .loss {
   color: #ff787a
+}
+.fake-text {
+  display: inline-block;
+  height: 5px;
+  width: 100%;
+  background-color: rgba($color: #ffffff, $alpha: 0.3);
+  border-radius: 3px;
 }

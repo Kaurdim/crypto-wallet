@@ -1,11 +1,18 @@
 import React  from 'react';
+import { Icon } from './Icon';
 import '../../styles/TextTile.scss';
 
-export const TextTile = ({mainText, subText, className, proit}) => {
+export const TextTile = ({ mainText = 0.234, subText = 'sdds', className, profit, icon, align}) => {
   return (
     <div className={'text-tail-container' + (className || '')}>
-      <span className='main-text'>434343</span>
-      <span className='sub-text'>3434</span>
+      {icon && 
+      <div className='tail-icon'>
+        <Icon/>
+      </div>}
+      <div className='tail-text' style={{textAlign: align}}>
+      <span className='main-text'>{mainText || <span className='fake-text'></span>}</span>
+        <span className='sub-text'>{subText || <span className='fake-text'></span>}</span>
+      </div>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter , Route, Link } from 'react-router-dom';
-import { MainPage } from './pages/MainPage';
+import { MainPage } from './pages/mainPage/MainPage';
 import { CrypoCharts } from './pages/CryptoCharts';
 import '../styles/App.scss';
 import '../styles/reset.scss';

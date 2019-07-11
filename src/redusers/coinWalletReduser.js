@@ -25,7 +25,7 @@ export function coinWalletReduser(state = walletState, { type, payload }) {
         ...state, 
         coins: state.coins.map(coin => ({
           ...coin,
-          currentPrice: payload.currentPrices[coin.name][payload.currency]
+          currentPrice: payload.prices[coin.name][payload.currency]
         }))
       };
     default:
