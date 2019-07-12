@@ -1,4 +1,5 @@
-import { SET_COIN_CURRENT_PRICE } from '../constants';
+import { 
+  SET_COIN_CURRENT_PRICE, SET_COIN_SUBSTRACT_PRICE } from '../constants';
 import { calculateProfit } from '../utils';
 
 const rundomValues = (min, max, round = 2) => {
@@ -27,8 +28,8 @@ const expampleCoins = [
 
 const coins = expampleCoins.map(coin => ({
   ...coin,
-  amount: rundomValues(0.1, 10, 5),
-  price: rundomValues(10, 10000),
+  amount: rundomValues(0.1, 5, 5),
+  price: null,
   currentPrice: null,
   profit: null
 }));
@@ -49,26 +50,13 @@ export function coinWalletReduser(state = walletState, { type, payload }) {
           currentPrice: payload.prices[coin.name][payload.currency]
         }))
       };
-    case SET_COIN_PRICE:
+    case SET_COIN_SUBSTRACT_PRICE:
       return {
         ...state, 
         coins: state.coins.map(coin => ({
           ...coin,
-          price: payload.prices[coin.name][payload.currency]
+          price: payload.prices[coin.name]
         }))
-      };
-    case SET_COIN_PROFIT:
-      return {
-        ...state, 
-        coins: state.coins.map(coin => ({
-          ...coin,
-          profit: calculateProfit(coins.amount, coins.price, coin.currentPrice)
-        }))
-      };
-    case CALCULATE_WALLET_PRISE:
-      return {
-        ...state, 
-        walletPrise: state.coins.reduce((sum, coin) => sum + coin.currentPrice, 0)
       };
     default:
       return state;

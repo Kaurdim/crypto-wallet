@@ -1,13 +1,11 @@
-
+import { SELECT_COIN, SET_CHART_DATA } from '../constants';
 
 const coinChartData = {
   selctedCoin: 'BTC',
-  chartsData: [] 
+  data: [] 
 }
 
-
-
-export function coinWalletReduser(state = coinChartData, { type, payload }) {
+export function coinsChartReduser(state = coinChartData, { type, payload }) {
   switch (type) {
     case SELECT_COIN:
       return {
@@ -17,7 +15,7 @@ export function coinWalletReduser(state = coinChartData, { type, payload }) {
     case SET_CHART_DATA:
       return {
         ...state, 
-        chartsData: payload.chartsData
+        data: payload.chartData
       };
     default:
       return state;

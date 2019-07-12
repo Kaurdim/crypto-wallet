@@ -10,3 +10,11 @@
   flex-direction: column;
   overflow: hidden;
 }
+.nav-bar {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  img {
+    width: 25px;
+  }
+}

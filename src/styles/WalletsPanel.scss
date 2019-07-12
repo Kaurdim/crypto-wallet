@@ -1,7 +1,8 @@
-.coins-panel {
+.wallets-panel {
   display: flex;
   flex-wrap: nowrap;
   overflow-y: scroll;
+  overflow-y: hidden;
   > .small-tile {
     flex-basis: 200px;
   }

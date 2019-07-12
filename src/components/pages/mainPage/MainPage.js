@@ -1,39 +1,49 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getCoinsCurrentPrice } from '../../../actions/walletActions';
+import { 
+  getCoinsCurrentPrice, 
+  setCoinsSubstractPrice } from '../../../actions/walletActions';
+import { selectCoin } from '../../../actions/chartsActions';
 import { CoinsList } from './CoinsList';
 import { BalanceDisplay } from './BalanceDisplay';
+import { calculateWalletProfit } from '../../../utils';
 import '../../../styles/MainPage.scss';
 import '../../../styles/common.scss';
 
 
 export class MainPage extends Component {
-
-  componentDidMount() {
-    const coins = this.props.wallet.coins.map(coin => coin.name);
-    this.props.getCoinsPrice(coins);
-  }
-
   render() {
-    const { coins } = this.props.wallet;
+    const { wallet, changeSelectedCoin, interval } = this.props;
+
+    const walletCurrentSum = wallet.coins.reduce((sum, coin) => {
+      return sum + (coin.amount * coin.currentPrice);
+    }, 0);
+    const walletSubstractSum = wallet.coins.reduce((sum, coin) => {
+      return sum + (coin.amount * coin.price);
+    }, 0);
+    const walletProfit = walletCurrentSum - walletSubstractSum;
     return (
       <div className='main-page'>
-        <BalanceDisplay/>
-        <CoinsList coins={coins}/>
+        <BalanceDisplay 
+          timeChange={interval.changes}
+          walletCurrentSum={walletCurrentSum}
+          walletProfit={walletProfit}/>
+        <CoinsList coins={wallet.coins} changeCoin={changeSelectedCoin}/>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ wallet }) => {
+const mapStateToProps = ({ wallet, interval }) => {
   return {
-    wallet
+    wallet,
+    interval
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getCoinsPrice: (coins, currency) => dispatch(getCoinsCurrentPrice(coins, currency))
+    changeSelectedCoin: (coin) => dispatch(selectCoin(coin))
   };
 };
 

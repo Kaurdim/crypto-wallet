@@ -1,19 +1,25 @@
 @import './variables.scss';
 
 .big-tail {
-  max-width: 400px;
   margin: 8px;
   padding: 0 15px;
   border-radius: 5px;
   background-color: rgba($color: #ffffff, $alpha: .1);
-
   .coin-info {
     border-bottom: 1px solid rgba($color: #ffffff, $alpha: .1);;
   }
+  .main-text {
+    font-size: 14px;
+  }
+  .sub-text {
+    font-size: 11px;
+  }
+  .tail-icon {
+    font-size: 20px;
+  }
 }
-
 .tail-row {
   display: flex;
-  padding: 15px 0;
+  padding: 12px 0;
   justify-content: space-between;
 }

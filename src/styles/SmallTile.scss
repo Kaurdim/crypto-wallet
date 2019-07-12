@@ -10,17 +10,24 @@
     background-color:  $tail-color;
   }
   &.size-m {
-    width: 200px;
+    min-width: 150px;
     border: 1px solid $tail-color;
-
+    cursor: pointer;
+    .tail-icon {
+      font-size: 14px;
+    }
     .main-text {
       font-size: 12px;
     }
     .sub-text {
-      font-size: 11px;
+      font-size: 9px;
     }
   }
   &.size-l {
+    max-width: 400px;
+    .tail-icon {
+      font-size: 22px;
+    }
     .main-text {
       font-size: 16px;
     }

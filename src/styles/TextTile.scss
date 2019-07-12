@@ -12,48 +12,25 @@
 
   .main-text {
     color: $text-color;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     }
-
-  &.font-size-s {
-    .main-text {
-      font-size: 11px;
-    }
-    .sub-text {
-      font-size: 10px;
-    }
-  }
-  &.font-size-m {
-    .main-text {
-      font-size: 12px;
-    }
-    .sub-text {
-      font-size: 11px;
-    }
-  }
-  &.font-size-l {
-    .main-text {
-      font-size: 14px;
-    }
-    .sub-text {
-      font-size: 12px;
-    }
-  }
-  &.font-size-xl {
-    .main-text {
-      font-size: 16px;
-    }
-    .sub-text {
-      font-size: 12px;
-    }
-  }
-  &.profit {
+  &.profit-main {
     .main-text {
       color: #0ddb86;
     }
   }
-  &.loss {
+  &.loss-main {
     .main-text {
+      color: #ff787a
+    }
+  }
+    &.profit-sub {
+    .sub-text {
+      color: #0ddb86;
+    }
+  }
+  &.loss-sub {
+    .sub-text {
       color: #ff787a
     }
   }
@@ -62,6 +39,5 @@
 .tail-icon {
   color: white;
   margin-right: 3px;
-  font-size: 20px;
   padding: auto;
 }
