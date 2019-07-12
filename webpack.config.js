@@ -40,11 +40,7 @@ module.exports = {
   resolve: { extensions: ['*', '.js', '.jsx'] },
   devServer: {
     port: PORT,
-<<<<<<< HEAD
-    historyApiFallback: true,
-=======
     historyApiFallback: true
->>>>>>> b5829b466e0f5382c47417c3f88091984c36aef2
   },
   plugins: [new HtmlWebpackPlugin({
     template: './public/index.html',
