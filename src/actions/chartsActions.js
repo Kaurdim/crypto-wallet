@@ -2,6 +2,7 @@ import { getChartsPriceData } from '../api/apis';
 import { SELECT_COIN, SET_CHART_DATA } from '../constants';
 import { prepareDataForChart } from '../utils';
 
+
 export function getChartDataAction(coinName, currency, period) {
   return async dispatch => {
     try {
@@ -10,8 +11,8 @@ export function getChartDataAction(coinName, currency, period) {
     } catch (error) {
       console.log(error);
     }
-  } 
-}
+  };
+};
 
 export function selectCoin(coin) {
   return {
@@ -20,8 +21,7 @@ export function selectCoin(coin) {
     },
     type: SELECT_COIN,
   };
-}
-
+};
 
 export function setChartData(data) {
   return {
@@ -30,4 +30,4 @@ export function setChartData(data) {
     },
     type: SET_CHART_DATA,
   };
-}
+};

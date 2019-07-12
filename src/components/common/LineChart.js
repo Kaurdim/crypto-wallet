@@ -17,7 +17,6 @@ export class LineChart extends React.Component {
       default:
         return value;
     }
-     
   }
 
   render () {

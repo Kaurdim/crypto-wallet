@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { TextTile } from './TextTile';
-import '../../styles/BigTail.scss';
 import { calculateProfit, prepareProfitValue } from '../../utils';
+import '../../styles/BigTail.scss';
 
 export const BigTail = ({ coin, onClick }) => {
   const { name, amount, price, currentPrice, textName } = coin;
@@ -19,5 +20,5 @@ export const BigTail = ({ coin, onClick }) => {
         className={profit === 0 ? '' : profit > 0 ? 'profit-main' : 'loss-main'}/>
       </div>
     </div>
-  )
-}
+  );
+};
