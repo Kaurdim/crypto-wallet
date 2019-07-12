@@ -32,7 +32,6 @@ export class ChartsPage extends Component {
 
   updateChartWithNewCoin = (coin) => {
     this.props.changeSelectedCoin(coin);
-    console.log(this.props.interval);
     this.props.getChartData(coin, 'USD', this.props.interval);
   }
 

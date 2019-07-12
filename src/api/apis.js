@@ -3,7 +3,7 @@ export const API_BASE_URL = 'https://min-api.cryptocompare.com/data/';
 const API_KEY = 'f063a080d11d4a24ed8b50773f8d6c731e25020ad3036aeb61569a498b599057';
 
 const fetchApi = async (params) => {
-  const response = await fetch(API_BASE_URL + params);
+  const response = await fetch(API_BASE_URL + params, { mode: 'cors' });
   return await response.json();
 };
 
