@@ -1,8 +1,12 @@
 .wallets-panel {
   display: flex;
   flex-wrap: nowrap;
-  overflow-y: scroll;
   overflow-y: hidden;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
   > .small-tile {
     flex-basis: 200px;
   }

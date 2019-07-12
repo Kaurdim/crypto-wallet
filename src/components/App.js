@@ -32,11 +32,11 @@ export class App extends Component {
   }
   render() {
     return (
-      <div className='app'>
+      <>
         {this.navBar()}
         <Route exact path='/' component={MainPage} />
         <Route exact path='/crypto-chart' component={ChartsPage} />
-      </div>
+      </>
     );
   }
 
