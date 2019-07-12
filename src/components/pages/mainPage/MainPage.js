@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { 
-  getCoinsCurrentPrice, 
-  setCoinsSubstractPrice } from '../../../actions/walletActions';
+
 import { selectCoin } from '../../../actions/chartsActions';
 import { CoinsList } from './CoinsList';
 import { BalanceDisplay } from './BalanceDisplay';
-import { calculateWalletProfit } from '../../../utils';
 import '../../../styles/MainPage.scss';
 import '../../../styles/common.scss';
 
 
 export class MainPage extends Component {
   render() {
-    const { wallet, changeSelectedCoin, interval } = this.props;
+    const { wallet, changeSelectedCoin, interval, isFetchError } = this.props;
 
     const walletCurrentSum = wallet.coins.reduce((sum, coin) => {
       return sum + (coin.amount * coin.currentPrice);
@@ -27,17 +24,20 @@ export class MainPage extends Component {
         <BalanceDisplay 
           timeChange={interval.changes}
           walletCurrentSum={walletCurrentSum}
-          walletProfit={walletProfit}/>
+          walletProfit={walletProfit}
+          requestError={isFetchError}
+          />
         <CoinsList coins={wallet.coins} changeCoin={changeSelectedCoin}/>
       </div>
-    )
+    );
   }
-}
+};
 
-const mapStateToProps = ({ wallet, interval }) => {
+const mapStateToProps = ({ wallet, interval, isFetchError }) => {
   return {
     wallet,
-    interval
+    interval,
+    isFetchError
   };
 };
 

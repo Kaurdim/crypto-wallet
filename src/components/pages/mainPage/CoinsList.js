@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { BigTail } from '../../common/BigTail';
 import '../../../styles/CoinList.scss';
 
+
 export const CoinsList = ({ coins, changeCoin }) => {
   return (
     <div className='coins-list' >
@@ -13,5 +14,5 @@ export const CoinsList = ({ coins, changeCoin }) => {
         </Link>
       ))}
     </div>
-  )
-}
+  );
+};

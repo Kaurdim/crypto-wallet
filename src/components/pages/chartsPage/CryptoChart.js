@@ -1,7 +1,11 @@
 import React from 'react';
+
 import { LineChart } from '../../common/LineChart';
+
+
 const borderColor = 'rgb(161, 113, 255)';
 const backgroundColor = 'rgba(161, 113, 255, 0.1)'
+
 
 export const CryptoChart = ({ data }) => {
   const LineDataset = [{
@@ -21,5 +25,5 @@ export const CryptoChart = ({ data }) => {
     <div className='crypto-chart'>
       <LineChart datasets={LineDataset} />
     </div>
-  )
-}
+  );
+};

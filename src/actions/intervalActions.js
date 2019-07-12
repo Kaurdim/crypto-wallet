@@ -8,4 +8,4 @@ export function setInterval(interval) {
     },
     type: SET_INTERVAL,
   };
-}
+};

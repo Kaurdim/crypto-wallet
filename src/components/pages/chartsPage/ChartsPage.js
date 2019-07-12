@@ -11,8 +11,8 @@ import { setInterval } from '../../../actions/intervalActions';
 import { setCoinsSubstractPrice } from '../../../actions/walletActions'
 import '../../../styles/ChartsPage.scss';
 
-export class ChartsPage extends Component {
 
+export class ChartsPage extends Component {
   componentDidMount() {
     this.initChart();
   }
@@ -54,9 +54,9 @@ export class ChartsPage extends Component {
           selectInterval={this.updateChartWithNewInterval} />
         <CryptoChart data={this.props.chartData.data} />
       </div>
-    )
+    );
   }
-}
+};
 
 const mapStateToProps = ({ wallet, chartData, interval }) => {
   return {
