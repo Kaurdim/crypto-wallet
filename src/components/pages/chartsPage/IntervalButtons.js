@@ -5,7 +5,6 @@ import '../../../styles/IntervalButtons.scss';
 
 
 export const IntervalButtons = ({ selcectedInterval, selectInterval }) => {
-
   const isActive = (name) => (name === selcectedInterval.name);
   return (
     <div className='interval-buttons'>
