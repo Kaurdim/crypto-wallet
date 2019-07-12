@@ -17,6 +17,6 @@ export async function getPurchasePriceData(coin, currency, interval) {
 } 
 
 
-export async function getChartsPriceData(coin, currency, period) {
-  return await fetchApi (`histohour?fsym=${coin}&tsym=${currency}&limit=${period}`);
+export async function getChartsPriceData(coin, currency, interval) {
+  return await fetchApi(`histo${interval.unit}?fsym=${coin}&tsym=${currency}&limit=${interval.value}`);
 } 

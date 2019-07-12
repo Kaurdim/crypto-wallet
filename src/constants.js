@@ -1,8 +1,8 @@
 
 export const DEFAULT_PREDEFINED_INTERVALS = [
-  { format: 'DD.MM', name: 'day', text: 'Day', value: 24, changes: '24h Changes' },
-  { format: 'DD.MM', name: 'week', text: 'Week', value: 168, changes: '7d Changes' },
-  { format: 'DD.MM.YY', name: 'month', text: 'Month', value: 720, changes: '1m Changes' }
+  { unit: 'hour', name: 'day', text: 'Day', value: 24, changes: '24h Changes' },
+  { unit: 'hour', name: 'week', text: 'Week', value: 168, changes: '7d Changes' },
+  { unit: 'day', name: 'month', text: 'Month', value: 31, changes: '1m Changes' }
 ];
 
 

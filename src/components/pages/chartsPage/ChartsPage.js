@@ -18,23 +18,22 @@ export class ChartsPage extends Component {
   }
 
   initChart = () => {
-    const { value } = this.props.interval;
     const { selctedCoin } = this.props.chartData;
-    this.props.getChartData(selctedCoin, 'USD', value);
+    this.props.getChartData(selctedCoin, 'USD', this.props.interval);
   }
 
   updateChartWithNewInterval = (interval) => {
     const { selctedCoin } = this.props.chartData;
     const coinsName = this.props.wallet.coins.map(c => c.name);
-    this.props.selectInterval(interval)
-    this.props.getChartData(selctedCoin, 'USD', interval.value);
+    this.props.selectInterval(interval);
+    this.props.getChartData(selctedCoin, 'USD', interval);
     this.props.setSubstractPrice(coinsName, 'USD', interval);
   }
 
   updateChartWithNewCoin = (coin) => {
-    const { value } = this.props.interval;
-    this.props.changeSelectedCoin(coin)
-    this.props.getChartData(coin, 'USD', value);
+    this.props.changeSelectedCoin(coin);
+    console.log(this.props.interval);
+    this.props.getChartData(coin, 'USD', this.props.interval);
   }
 
   render() {
@@ -68,8 +67,8 @@ const mapStateToProps = ({ wallet, chartData, interval }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getChartData: (coinName, currency, period) =>
-      dispatch(getChartDataAction(coinName, currency, period)),
+    getChartData: (coinName, currency, interval) =>
+      dispatch(getChartDataAction(coinName, currency, interval)),
     selectInterval: (interval) => dispatch(setInterval(interval)),
     changeSelectedCoin: (coin) => dispatch(selectCoin(coin)),
     setSubstractPrice: (coins, currency, interval) =>

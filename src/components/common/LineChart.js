@@ -47,6 +47,7 @@ export class LineChart extends React.Component {
           },
           type: 'time',
           ticks: {
+            autoSkip: true,
           }
         }],
         yAxes: [{
