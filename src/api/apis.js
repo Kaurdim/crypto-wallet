@@ -13,7 +13,7 @@ export const getCurrentPriceData = async (coins, currency) => {
 
 
 export async function getPurchasePriceData(coin, currency, interval) {
-  const time = moment().subtract(interval.value, 'hours').unix();
+  const time = moment().subtract(interval.value, interval.unit).unix();
   return await fetchApi(`dayAvg?fsym=${coin}&tsym=${currency}&toTs=${time}&api_key=${API_KEY}`);
 };
 

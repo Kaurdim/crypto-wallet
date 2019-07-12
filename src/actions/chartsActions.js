@@ -6,7 +6,6 @@ export function getChartDataAction(coinName, currency, interval) {
   return async dispatch => {
     try {
       const { Data } = await getChartsPriceData(coinName, currency, interval);
-      console.log(interval);
       dispatch(setChartData(prepareDataForChart(Data)));
     } catch (error) {
       console.log(error);
