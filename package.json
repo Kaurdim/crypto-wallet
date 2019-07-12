@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Тестовое задание",
   "main": "index.js",
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.13.0"
+  },
   "scripts": {
     "dev": "webpack-dev-server --mode development --hot --inline",
     "build": "webpack --mode production"

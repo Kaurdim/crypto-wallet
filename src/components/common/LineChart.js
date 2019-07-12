@@ -1,11 +1,10 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-import moment from 'moment';
 
 
 export class LineChart extends React.Component {
   static defaultProps = {
-    height: 300
+    height: 400
   }
 
   customTicks(value) {
@@ -66,9 +65,13 @@ export class LineChart extends React.Component {
       },
     };
 
+    const styles = {
+
+    }
+
     return (
       <div className='chart-container'>
-        <Line data={data} height={height} legend={legend} options={options}/>
+        <Line data={data} legend={legend}  options={options}/>
       </div>
     );
   }

@@ -40,7 +40,7 @@ export class ChartsPage extends Component {
     const { wallet: { coins }, interval, selectInterval, chartData } = this.props;
     const displayedСoin = coins.find(c => c.name === chartData.selctedCoin) || {};
     return (
-      <div className='crypo-charts'>
+      <div className='charts-page'>
         <header className='crypo-charts-header'>
           <WalletsPanel
             coins={coins}
