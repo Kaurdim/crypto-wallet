@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
+
 import { MainPage } from './pages/mainPage/MainPage';
 import { ChartsPage } from './pages/chartsPage/ChartsPage';
 import { Icon } from './common/Icon';
@@ -31,11 +32,11 @@ export class App extends Component {
   }
   render() {
     return (
-      <div className='app'>
+      <>
         {this.navBar()}
         <Route exact path='/' component={MainPage} />
         <Route exact path='/crypto-chart' component={ChartsPage} />
-      </div>
+      </>
     );
   }
 
@@ -52,9 +53,9 @@ export class App extends Component {
         <Link to='/' className='back-link'><Icon path={back} /></Link>
       }
       </div>
-    )
+    );
   }
-}
+};
 
 const mapStateToProps = ({ wallet, interval }) => {
   return {
@@ -73,5 +74,6 @@ const mapDispatchToProps = (dispatch) => {
 
   };
 };
+
 App = withRouter(App);
 App = connect(mapStateToProps, mapDispatchToProps)(App);

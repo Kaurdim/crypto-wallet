@@ -3,6 +3,7 @@ import React from 'react';
 import { DEFAULT_PREDEFINED_INTERVALS } from '../../../constants'
 import '../../../styles/IntervalButtons.scss';
 
+
 export const IntervalButtons = ({ selcectedInterval, selectInterval }) => {
 
   const isActive = (name) => (name === selcectedInterval.name);

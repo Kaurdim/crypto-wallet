@@ -1,6 +1,7 @@
 import React  from 'react';
-import '../../styles/TextTile.scss';
 import classNames from 'classnames';
+
+import '../../styles/TextTile.scss';
 
 
 export const TextTile = ({ mainText, subText, className = '', icon, align}) => {
@@ -16,5 +17,5 @@ export const TextTile = ({ mainText, subText, className = '', icon, align}) => {
         <span className='sub-text'>{subText || <span className='fake-text'></span>}</span>
       </div>
     </div>
-  )
-} 
+  );
+}; 

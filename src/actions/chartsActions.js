@@ -11,8 +11,8 @@ export function getChartDataAction(coinName, currency, interval) {
     } catch (error) {
       console.log(error);
     }
-  } 
-}
+  };
+};
 
 export function selectCoin(coin) {
   return {
@@ -21,8 +21,7 @@ export function selectCoin(coin) {
     },
     type: SELECT_COIN,
   };
-}
-
+};
 
 export function setChartData(data) {
   return {
@@ -31,4 +30,4 @@ export function setChartData(data) {
     },
     type: SET_CHART_DATA,
   };
-}
+};

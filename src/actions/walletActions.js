@@ -1,6 +1,7 @@
 import { getCurrentPriceData, getPurchasePriceData } from '../api/apis';
 import { SET_COIN_CURRENT_PRICE, SET_COIN_SUBSTRACT_PRICE } from '../constants';
 
+
 export function getCoinsCurrentPrice(coins, currency = 'USD') {
   return async dispatch => {
     try {
@@ -9,8 +10,8 @@ export function getCoinsCurrentPrice(coins, currency = 'USD') {
     } catch (error) { 
         console.log(error);
     }
-  }
-}
+  };
+};
 
 export function setCoinsSubstractPrice(coins, currency = 'USD', interval) {
   return async dispatch => {
@@ -23,8 +24,8 @@ export function setCoinsSubstractPrice(coins, currency = 'USD', interval) {
     } catch (error) {
       console.log(error);
     }
-  }
-}
+  };
+};
 
 export function setCurrentPrice(prices, currency) {
   return {
@@ -34,7 +35,7 @@ export function setCurrentPrice(prices, currency) {
     },
     type: SET_COIN_CURRENT_PRICE,
   };
-} 
+};
 
 export function setSubstractPrice(prices) {
   return {
@@ -43,7 +44,7 @@ export function setSubstractPrice(prices) {
     },
     type: SET_COIN_SUBSTRACT_PRICE,
   };
-} 
+};
 
 
 async function* getSubstractPrice(coins, currency, interval) {
@@ -54,4 +55,4 @@ async function* getSubstractPrice(coins, currency, interval) {
       price: price[currency]
     } 
   }
-}
+};
